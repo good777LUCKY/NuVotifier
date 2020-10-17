@@ -10,7 +10,7 @@ import com.vexsoftware.votifier.net.protocol.v1crypto.RSAKeygen;
 import com.vexsoftware.votifier.nukkit.cmd.NVReloadCmd;
 import com.vexsoftware.votifier.nukkit.cmd.TestVoteCmd;
 import com.vexsoftware.votifier.nukkit.event.VotifierEvent;
-import com.vexsoftware.votifier.nukkit.forwarding.NukkitPluginMessagingForwardingSink;
+//import com.vexsoftware.votifier.nukkit.forwarding.NukkitPluginMessagingForwardingSink;
 import com.vexsoftware.votifier.platform.LoggingAdapter;
 import com.vexsoftware.votifier.platform.VotifierPlugin;
 import com.vexsoftware.votifier.platform.scheduler.VotifierScheduler;
@@ -215,13 +215,14 @@ public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugi
             if ("none".equals(method)) {
                 getLogger().info("Method none selected for vote forwarding: Votes will not be received from a forwarder.");
             } else if ("pluginmessaging".equals(method)) {
-                String channel = forwardingConfig.getString("pluginMessaging.channel", "NuVotifier");
+                /*String channel = forwardingConfig.getString("pluginMessaging.channel", "NuVotifier");
                 try {
                     forwardingMethod = new NukkitPluginMessagingForwardingSink(this, channel, this);
                     getLogger().info("Receiving votes over PluginMessaging channel '" + channel + "'.");
                 } catch (RuntimeException e) {
                     getLogger().error("NuVotifier could not set up PluginMessaging for vote forwarding!", e);
-                }
+                }*/
+                getLogger().error("Sorry, NukkitX NuVotifier does not support PluginMessaging for vote forwarding!");
             } else {
                 getLogger().error("No vote forwarding method '" + method + "' known. Defaulting to noop implementation.");
             }
