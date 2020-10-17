@@ -1,5 +1,6 @@
 package com.vexsoftware.votifier.nukkit;
 
+import com.vexsoftware.votifier.VoteHandler;
 import com.vexsoftware.votifier.support.forwarding.ForwardedVoteListener;
 import com.vexsoftware.votifier.support.forwarding.ForwardingVoteSink;
 import com.vexsoftware.votifier.model.Vote;
