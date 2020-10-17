@@ -162,7 +162,7 @@ public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugi
         ConfigSection tokenSection = cfg.getSection("tokens");
 
         if (tokenSection != null) {
-            Map<String, Object> websites = tokenSection.getAllMap(false);
+            Map<String, Object> websites = tokenSection.getAllMap();
             for (Map.Entry<String, Object> website : websites.entrySet()) {
                 tokens.put(website.getKey(), KeyCreator.createKeyFrom(website.getValue().toString()));
                 getLogger().info("Loaded token for website: " + website.getKey());
