@@ -168,7 +168,7 @@ public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugi
             }
         } else {
             String token = TokenUtil.newToken();
-            tokenSection = cfg.createSection("tokens");
+            tokenSection = cfg.getSection("tokens");
             tokenSection.set("default", token);
             tokens.put("default", KeyCreator.createKeyFrom(token));
             try {
