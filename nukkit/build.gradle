@@ -1,0 +1,5 @@
+dependencies {
+    compileOnly group: "cn.nukkit", name: "nukkit", version: "1.0.0-SNAPSHOT"
+    implementation project(":nuvotifier-api")
+    implementation project(":nuvotifier-common")
+}
