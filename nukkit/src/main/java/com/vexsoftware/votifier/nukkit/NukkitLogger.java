@@ -27,12 +27,12 @@ public class NukkitLogger implements LoggingAdapter {
 
     @Override
     public void warn(String s) {
-        l.warn(s);
+        l.warning(s);
     }
 
     @Override
     public void warn(String s, Object... o) {
-        l.warn(s, o);
+        l.warning(s, o);
     }
 
     @Override
