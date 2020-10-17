@@ -129,7 +129,7 @@ public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugi
         File rsaDirectory = new File(getDataFolder(), "rsa");
 
         // Load configuration.
-        cfg = Config.load(config.toString(), Config.YAML);
+        cfg = new Config(config, Config.YAML);
 
         /*
          * Create RSA directory and keys if it does not exist; otherwise, read
@@ -162,7 +162,7 @@ public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugi
         ConfigSection tokenSection = cfg.getSection("tokens");
 
         if (tokenSection != null) {
-            Map<String, Object> websites = tokenSection.getValues(false);
+            Map<String, Object> websites = tokenSection.getAllMap(false);
             for (Map.Entry<String, Object> website : websites.entrySet()) {
                 tokens.put(website.getKey(), KeyCreator.createKeyFrom(website.getValue().toString()));
                 getLogger().info("Loaded token for website: " + website.getKey());
