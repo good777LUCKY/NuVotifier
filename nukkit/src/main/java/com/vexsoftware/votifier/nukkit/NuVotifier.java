@@ -128,7 +128,7 @@ public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugi
         File rsaDirectory = new File(getDataFolder(), "rsa");
 
         // Load configuration.
-        cfg = Config.load(config, Config.YAML);
+        cfg = Config.load(config.toString(), Config.YAML);
 
         /*
          * Create RSA directory and keys if it does not exist; otherwise, read
