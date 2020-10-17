@@ -23,12 +23,7 @@ public class VotifierEvent extends Event {
         return vote;
     }
     
-    @Override
     public HandlerList getHandlers() {
-        return handlers;
-    }
-    
-    public static HandlerList getHandlerList() {
         return handlers;
     }
 }
