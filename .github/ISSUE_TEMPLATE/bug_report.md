@@ -53,6 +53,8 @@ Sponge: Use /sponge plugins and find NuVotifier
 BungeeCord: No such command exists.
 
 Velocity: Use /velocity plugins from in-game and hover over "nuvotifier"
+
+Nukkit: Use /plugins and find NuVotifier
 -->
 ```
 
