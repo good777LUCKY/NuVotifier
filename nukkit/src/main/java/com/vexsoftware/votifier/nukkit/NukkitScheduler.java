@@ -3,7 +3,7 @@ package com.vexsoftware.votifier.nukkit;
 import com.vexsoftware.votifier.platform.scheduler.ScheduledVotifierTask;
 import com.vexsoftware.votifier.platform.scheduler.VotifierScheduler;
 
-import cn.nukkit.scheduler.Task;
+import cn.nukkit.scheduler.TaskHandler;
 
 import java.util.concurrent.TimeUnit;
 
@@ -48,9 +48,9 @@ class NukkitScheduler implements VotifierScheduler {
     }
 
     private static class NukkitTaskWrapper implements ScheduledVotifierTask {
-        private final Task task;
+        private final TaskHandler task;
 
-        private NukkitTaskWrapper(Task task) {
+        private NukkitTaskWrapper(TaskHandler task) {
             this.task = task;
         }
 
