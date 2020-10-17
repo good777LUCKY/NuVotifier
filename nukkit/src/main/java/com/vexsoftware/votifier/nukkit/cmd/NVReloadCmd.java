@@ -31,5 +31,6 @@ public class NVReloadCmd extends Command {
         } else {
             sender.sendMessage(TextFormat.DARK_RED + "Looks like there was a problem reloading NuVotifier, check the console!");
         }
+        return true;
     }
 }
