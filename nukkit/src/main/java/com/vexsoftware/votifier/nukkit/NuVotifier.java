@@ -12,6 +12,7 @@ import com.vexsoftware.votifier.nukkit.cmd.NVReloadCmd;
 import com.vexsoftware.votifier.nukkit.cmd.TestVoteCmd;
 import com.vexsoftware.votifier.nukkit.event.VotifierEvent;
 //import com.vexsoftware.votifier.nukkit.forwarding.NukkitPluginMessagingForwardingSink;
+import Com.vexsoftware.votifier.platform.JavaUtilLogger;
 import com.vexsoftware.votifier.platform.LoggingAdapter;
 import com.vexsoftware.votifier.platform.VotifierPlugin;
 import com.vexsoftware.votifier.platform.scheduler.VotifierScheduler;
@@ -65,7 +66,7 @@ public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugi
 
     private boolean loadAndBind() {
         scheduler = new NukkitScheduler(this);
-        pluginLogger = new NukkitLogger(getLogger());
+        pluginLogger = new JavaUtilLogger(getLogger());
         if (!getDataFolder().exists()) {
             if (!getDataFolder().mkdir()) {
                 throw new RuntimeException("Unable to create the plugin data folder " + getDataFolder());
