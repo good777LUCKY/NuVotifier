@@ -6,6 +6,9 @@ import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.utils.TextFormat;
 
+/**
+ * @author good777LUCKY
+ */
 public class NVReloadCmd extends Command {
 
     private final NuVotifier plugin;
