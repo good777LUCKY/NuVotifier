@@ -4,6 +4,9 @@ import com.vexsoftware.votifier.platform.LoggingAdapter;
 
 import cn.nukkit.plugin.PluginLogger;
 
+/**
+ * @author good777LUCKY
+ */
 public class NukkitLogger implements LoggingAdapter {
 
     private PluginLogger l;
