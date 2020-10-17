@@ -1,5 +1,5 @@
 name: Votifier
-main: com.vexsoftware.votifier.NuVotifierNukkit
+main: com.vexsoftware.votifier.nukkit.NuVotifier
 version: @app.version@
 description: A plugin that gets notified when votes are made for the server on toplists.
 authors: [Ichbinjoe, blakeman8192, Kramer, tuxed, good777LUCKY]
