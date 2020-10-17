@@ -44,7 +44,7 @@ class NukkitScheduler implements VotifierScheduler {
 
     @Override
     public ScheduledVotifierTask repeatOnPool(Runnable runnable, int delay, int repeat, TimeUnit unit) {
-        return new NukkitTaskWrapper(plugin.getServer().getScheduler().scheduleRepeatingTask(plugin, runnable, toTicks(delay, unit), toTicks(repeat, unit), true));
+        return new NukkitTaskWrapper(plugin.getServer().getScheduler().scheduleDelayedRepeatingTask(plugin, runnable, toTicks(delay, unit), toTicks(repeat, unit), true));
     }
 
     private static class NukkitTaskWrapper implements ScheduledVotifierTask {
