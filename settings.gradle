@@ -18,3 +18,5 @@ findProject(':universal')?.name = 'nuvotifier-universal'
 include 'velocity'
 findProject(':velocity')?.name = 'nuvotifier-velocity'
 
+include 'nukkit'
+findProject(':nukkit')?.name = 'nuvotifier-nukkit'
