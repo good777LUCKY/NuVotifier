@@ -245,7 +245,7 @@ public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugi
 
     @Override
     public void onEnable() {
-        getServer().getCommandMap().register("nvreload", new NVReloadcmd(this));
+        getServer().getCommandMap().register("nvreload", new NVReloadCmd(this));
         getServer().getCommandMap().register("testvote", new TestVoteCmd(this));
 
         if (!loadAndBind()) {
