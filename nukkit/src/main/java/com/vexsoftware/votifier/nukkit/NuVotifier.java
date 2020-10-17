@@ -314,7 +314,7 @@ public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugi
         if (debug) {
             getLogger().info("Got a " + protocolVersion.humanReadable + " vote record from " + remoteAddress + " -> " + vote);
         }
-        getServer().getScheduler().runTask(this, () -> fireVotifierEvent(vote));
+        getServer().getScheduler().scheduleTask(this, () -> fireVotifierEvent(vote));
     }
 
     @Override
@@ -335,7 +335,7 @@ public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugi
         if (debug) {
             getLogger().info("Got a forwarded vote -> " + v);
         }
-        getServer().getScheduler().runTask(this, () -> fireVotifierEvent(v));
+        getServer().getScheduler().scheduleTask(this, () -> fireVotifierEvent(v));
     }
 
     private void fireVotifierEvent(Vote vote) {
