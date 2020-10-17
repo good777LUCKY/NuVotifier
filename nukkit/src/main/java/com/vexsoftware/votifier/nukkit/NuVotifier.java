@@ -12,7 +12,7 @@ import com.vexsoftware.votifier.nukkit.cmd.NVReloadCmd;
 import com.vexsoftware.votifier.nukkit.cmd.TestVoteCmd;
 import com.vexsoftware.votifier.nukkit.event.VotifierEvent;
 //import com.vexsoftware.votifier.nukkit.forwarding.NukkitPluginMessagingForwardingSink;
-import Com.vexsoftware.votifier.platform.JavaUtilLogger;
+import com.vexsoftware.votifier.platform.JavaUtilLogger;
 import com.vexsoftware.votifier.platform.LoggingAdapter;
 import com.vexsoftware.votifier.platform.VotifierPlugin;
 import com.vexsoftware.votifier.platform.scheduler.VotifierScheduler;
