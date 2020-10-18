@@ -250,8 +250,8 @@ public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugi
 
     @Override
     public void onEnable() {
-        scheduler = new NukkitScheduler(this);
-        pluginLogger = new SLF4JLogger(logger);
+        this.scheduler = new NukkitScheduler(this);
+        this.loggerAdapter = new SLF4JLogger(logger);
         
         getServer().getCommandMap().register("nvreload", new NVReloadCmd(this));
         getServer().getCommandMap().register("testvote", new TestVoteCmd(this));
@@ -295,7 +295,7 @@ public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugi
 
     @Override
     public LoggingAdapter getPluginLogger() {
-        return pluginLogger;
+        return loggerAdapter;
     }
 
     public Logger getLogger() {
