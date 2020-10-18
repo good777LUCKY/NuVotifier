@@ -1,5 +1,6 @@
 package com.vexsoftware.votifier.nukkit;
 
+import com.google.inject.Inject;
 import com.vexsoftware.votifier.VoteHandler;
 import com.vexsoftware.votifier.support.forwarding.ForwardedVoteListener;
 import com.vexsoftware.votifier.support.forwarding.ForwardingVoteSink;
@@ -12,7 +13,6 @@ import com.vexsoftware.votifier.nukkit.cmd.NVReloadCmd;
 import com.vexsoftware.votifier.nukkit.cmd.TestVoteCmd;
 import com.vexsoftware.votifier.nukkit.event.VotifierEvent;
 //import com.vexsoftware.votifier.nukkit.forwarding.NukkitPluginMessagingForwardingSink;
-import com.vexsoftware.votifier.platform.JavaUtilLogger;
 import com.vexsoftware.votifier.platform.LoggingAdapter;
 import com.vexsoftware.votifier.platform.VotifierPlugin;
 import com.vexsoftware.votifier.platform.scheduler.VotifierScheduler;
@@ -34,12 +34,18 @@ import java.security.Key;
 import java.security.KeyPair;
 import java.util.HashMap;
 import java.util.Map;
+import org.slf4j.Logger;
 
 /**
  * @author good777LUCKY
  */
 public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugin, ForwardedVoteListener {
 
+    @Inject
+    public Logger logger;
+    
+    private SLF4JLogger loggerAdapter;
+    
     /**
      * The server bootstrap.
      */
@@ -62,11 +68,8 @@ public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugi
 
     private ForwardingVoteSink forwardingMethod;
     private VotifierScheduler scheduler;
-    private LoggingAdapter pluginLogger;
-
+    
     private boolean loadAndBind() {
-        scheduler = new NukkitScheduler(this);
-        pluginLogger = new JavaUtilLogger(getLogger());
         if (!getDataFolder().exists()) {
             if (!getDataFolder().mkdir()) {
                 throw new RuntimeException("Unable to create the plugin data folder " + getDataFolder());
@@ -247,6 +250,9 @@ public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugi
 
     @Override
     public void onEnable() {
+        scheduler = new NukkitScheduler(this);
+        pluginLogger = new SLF4JLogger(logger);
+        
         getServer().getCommandMap().register("nvreload", new NVReloadCmd(this));
         getServer().getCommandMap().register("testvote", new TestVoteCmd(this));
 
@@ -292,6 +298,10 @@ public class NuVotifier extends PluginBase implements VoteHandler, VotifierPlugi
         return pluginLogger;
     }
 
+    public Logger getLogger() {
+        return logger;
+    }
+    
     @Override
     public VotifierScheduler getScheduler() {
         return scheduler;
