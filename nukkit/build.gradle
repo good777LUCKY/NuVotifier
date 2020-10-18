@@ -8,4 +8,6 @@ dependencies {
     compileOnly group: "cn.nukkit", name: "nukkit", version: "1.0-SNAPSHOT"
     implementation project(":nuvotifier-api")
     implementation project(":nuvotifier-common")
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.6.1'
+    implementation group: 'com.google.inject', name: 'guice', version: '4.0'
 }
